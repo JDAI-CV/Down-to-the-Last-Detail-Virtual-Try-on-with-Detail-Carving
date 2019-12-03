@@ -1,0 +1,5 @@
+1LJ21D005-G11@10=person_half_front.jpg	AD121D0G7-A11@10=person_half_front_keypoints.json	CO121D08G-O11@10=cloth_front.jpg	test
+1VJ21D02K-Q11@8=person_half_front.jpg	AD121D0F0-G12@10=person_half_front_keypoints.json	AD121D0HY-Q11@18=cloth_front.jpg	test
+4HI21D003-C11@10=person_half_front.jpg	EV421EA51-A11@9=person_whole_front_keypoints.json	1VJ21D02B-Q11@10.1=cloth_front.jpg	test
+A0F21D012-K11@8=person_half_front.jpg	EV421DAIY-E11@8=person_half_front_keypoints.json	AS141D04K-Q11@16.1=cloth_front.jpg	test
+FIE21D00C-A11@9=person_whole_back.jpg	4BE21D0A2-C11@8=person_half_front_keypoints.json	7SI21D04N-G11@10=cloth_front.jpg	test

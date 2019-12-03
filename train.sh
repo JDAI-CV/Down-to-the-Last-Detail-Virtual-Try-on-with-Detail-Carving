@@ -1,0 +1,2 @@
+python train.py --train_mode appearance --batch_size_t 16 --save_time --suffix refactor --val_freq 20 --save_epoch_freq 1 --joint_all --joint_parse_loss
+# CUDA_VISIBLE_DEVICES=0 python train.py --train_mode gmm --batch_size_t 16 --val_freq 20
