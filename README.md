@@ -22,7 +22,11 @@ cd Detailed-virtual-try-on
 * Download pretrained models from [Google Drive](https://drive.google.com/open?id=1vQo4xNGdYe2uAtur0mDlHY7W2ZR3shWT). Put the checkpoints in "./pretrained_checkpoint". 
 
 ## Demo 
-A demo model is given, and we provide some samples in "./dataset/images". The triplets including source image, target pose, target cloth is provided in the "./demo/demo.txt".
+* A demo model is given, and we provide some samples in "./dataset/images". The triplets including source image, target pose, target cloth is provided in the "./demo/demo.txt".
+* Quick testing and check the result in "./demo/forward/0.jpg"
+```
+sh demo.sh
+```
 
 # Training
 
@@ -42,6 +46,7 @@ wget https://download.pytorch.org/models/vgg19-dcbb9e9d.pth
 ```
 
 ## Coarse-to-fine training manner
+* Set different configurations based on the "config.py". 
 ### Step 1: Train Clothing Spatial Alignment
 ```
 python train.py --train_model gmm
