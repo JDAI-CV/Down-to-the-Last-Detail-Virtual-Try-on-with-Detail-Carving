@@ -15,9 +15,10 @@ Code for Detailed virtual try-on under arbitrary poses.
 # Getting Started 
 ## Installation
 * Clone this repo
-git clone https://github.com/AIprogrammer/Detailed-virtual-try-on.git
+```
+git clone https://github.com/AIprogrammer/Detailed-virtual-try-on.git. 
 cd Detailed-virtual-try-on
-
+```
 * Download pre-trained models from [Google Drive](https://drive.google.com/open?id=1RpKC71VJub7hgWJ8dC5AWINW6nmZofm4). Put the checkpoints in "./checkpoints"
 
 ## Demo 
