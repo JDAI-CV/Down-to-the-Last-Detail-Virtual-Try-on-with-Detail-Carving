@@ -92,7 +92,8 @@ def forward(opt, paths, gpu_ids, refine_path):
                                 transforms.ToTensor(),
                                 transforms.Normalize((0.5), (0.5))
         ]) # change to [C, H, W]
-
+    
+    
     val_dataset = DemoDataset(opt, augment=augment)
     val_dataloader = DataLoader(
                     val_dataset,
@@ -104,18 +105,24 @@ def forward(opt, paths, gpu_ids, refine_path):
     
     with torch.no_grad():
         for i, result in enumerate(val_dataloader):
+            'warped cloth'
+            warped_cloth = warped_image(gmm, result) 
+            if opt.warp_cloth:
+                warped_cloth_name = result['warped_cloth_name']
+                warped_cloth_path = os.path.join('dataset', 'warped_cloth', warped_cloth_name[0])
+                if not os.path.exists(os.path.split(warped_cloth_path)[0]):
+                    os.makedirs(os.path.split(warped_cloth_path)[0])
+                utils.save_image(warped_cloth * 0.5 + 0.5, warped_cloth_path)
+                print('processing_%d'%i)
+                continue 
             source_parse = result['source_parse'].float().cuda()
             target_pose_embedding = result['target_pose_embedding'].float().cuda()
             source_image = result['source_image'].float().cuda()
             cloth_parse = result['cloth_parse'].cuda()
             cloth_image = result['cloth_image'].cuda()
             target_pose_img = result['target_pose_img'].float().cuda()
-
-            'warped cloth'
-            warped_cloth = warped_image(gmm, result) 
             cloth_parse = result['cloth_parse'].float().cuda()
             source_parse_vis = result['source_parse_vis'].float().cuda()
-            
 
             "filter add cloth infomation"
             real_s = source_parse   
@@ -165,26 +172,10 @@ def forward(opt, paths, gpu_ids, refine_path):
     torch.cuda.empty_cache()
 
 if __name__ == "__main__":
-    ### archive best model
     resume_gmm = "pretrained_checkpoint/step_009000.pth"
     resume_G_parse = 'pretrained_checkpoint/parsing.tar'
     resume_G_app_cpvton = 'pretrained_checkpoint/app.tar'
     resume_G_face = 'pretrained_checkpoint/face.tar'
-
-    # ### joint: based on the 70 epoch and 25 epoch face fine tuning
-    # r"""attention ==> joint training face argmax update face and parsing part
-    # """
-    # ### 9 epoch
-    # resume_G_parse = "/export/wangjh/Image_generation/Reproduce/image_generation_archive/net_model/joint_train_parsing/generator_joint_treeres_equal_weight_dis_res_face_argmax_grad_true/checkpoint_parsing_G_epoch_9_loss_0.25124_pth.tar"
-    # resume_G_face = "/export/wangjh/Image_generation/Reproduce/image_generation_archive/net_model/joint_train_face/generator_joint_treeres_equal_weight_dis_res_face_argmax_grad_true/checkpoint_face_G_epoch_9_loss_0.25124_pth.tar"
-    # resume_G_app_cpvton = "/export/wangjh/Image_generation/Reproduce/image_generation_archive/net_model/appearance_checkpoint/generator_joint_treeres_equal_weight_dis_res_face_argmax_grad_true/checkpoint_G_epoch_9_loss_0.56904_pth.tar"
-
-
-    # ### retrain the joint parsing and face refinement
-    # # if we wan't to get reasonable parsing, must add parsing BCE loss
-    # resume_G_app_cpvton = "/export/wangjh/Image_generation/Reproduce/image_generation_archive/net_model/appearance_checkpoint/generator_joint_treeres_equal_weight_dis_res_face_argmax_grad_true_all_add_parsingloss/checkpoint_G_epoch_7_loss_3.35636_pth.tar"
-    # resume_G_parse = "/export/wangjh/Image_generation/Reproduce/image_generation_archive/net_model/joint_train_parsing/generator_joint_treeres_equal_weight_dis_res_face_argmax_grad_true_all_add_parsingloss/checkpoint_parsing_G_epoch_7_loss_0.24716_pth.tar"
-    # resume_G_face = "/export/wangjh/Image_generation/Reproduce/image_generation_archive/net_model/joint_train_face/generator_joint_treeres_equal_weight_dis_res_face_argmax_grad_true_all_add_parsingloss/checkpoint_face_G_epoch_7_loss_0.24716_pth.tar"
 
     paths = [resume_gmm, resume_G_parse, resume_G_app_cpvton, resume_G_face]
     opt = Config().parse()
