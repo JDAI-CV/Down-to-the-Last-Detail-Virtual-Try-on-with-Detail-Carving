@@ -19,7 +19,7 @@ Code for Detailed virtual try-on under arbitrary poses.
 git clone https://github.com/AIprogrammer/Detailed-virtual-try-on.git. 
 cd Detailed-virtual-try-on
 ```
-* Download pretrained models from [Google Drive](https://drive.google.com/open?id=1vQo4xNGdYe2uAtur0mDlHY7W2ZR3shWT). Put the checkpoints in "./checkpoints"
+* Download pretrained models from [Google Drive](https://drive.google.com/open?id=1vQo4xNGdYe2uAtur0mDlHY7W2ZR3shWT). Put the checkpoints in "./pretrained_checkpoint". 
 
 ## Demo 
 A demo model is given, and we provide some samples in "./dataset/images". The triplets including source image, target pose, target cloth is provided in the "./demo/demo.txt".
@@ -35,8 +35,11 @@ A demo model is given, and we provide some samples in "./dataset/images". The tr
 * Semantic parsing. Use the [CIHP_PGN](https://github.com/Engineering-Course/CIHP_PGN), and put the parsing results in "./dataset/parse_cihp".
 * Cloth mask. You can use the "GrabCut" method to get the cloth mask, and put the cloth mask in "./dataset/cloth_mask".
 
-## Download the Vgg19 pretrained checkpoint
-* Download the [pretrained vgg19 checkpoint]('https://download.pytorch.org/models/vgg19-dcbb9e9d.pth').
+## Download the VGG19 pretrained checkpoint
+```
+cd vgg_model/
+wget https://download.pytorch.org/models/vgg19-dcbb9e9d.pth
+```
 
 ## Coarse-to-fine training manner
 ### Step 1: Train Clothing Spatial Alignment
