@@ -1,4 +1,4 @@
-#Detailed Vitural Try-on
+# Detailed Vitural Try-on
 Code for Detailed virtual try-on under arbitrary poses.
 
 ![Virtual try-on results](./demo/forward/0.jpg)
@@ -27,9 +27,9 @@ A demo model is given, and we provide some samples in "./dataset/images". The tr
 
 ## Download the dataset
 * Download the MPV dataset from [Image-based Multi-pose Virtual Try On](http://47.100.21.47:9999/overview.php) and put the dataset in "./dataset/images/".
-* Select the postive perspective images and create dataset split file 'data_pair.txt' and put the dataset in "./dataset/".
+* Select the postive perspective images and create dataset split file 'data_pair.txt', and then put the dataset in "./dataset/".
 
 ## Preprocess the dataset.
 * Pose keypoints. Use the [Openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), and put the keypoints file in "./dataset/pose_coco".
 * Semantic parsing. Use the [CIHP_PGN](https://github.com/Engineering-Course/CIHP_PGN), and put the parsing results in "./dataset/parse_cihp".
-* Cloth mask. You can use the "GrabCut" method to process the in-shop cloth to get the cloth mask, and put the cloth mask in "./dataset/cloth_mask".
+* Cloth mask. You can use the "GrabCut" method to get the cloth mask, and put the cloth mask in "./dataset/cloth_mask".
