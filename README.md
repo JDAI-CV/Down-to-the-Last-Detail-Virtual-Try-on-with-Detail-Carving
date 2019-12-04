@@ -26,8 +26,8 @@ A demo model is given, and we provide some samples in "./dataset/images". The tr
 # Training
 
 ## Download the dataset
-* Download the MPV dataset from [Image-based Multi-pose Virtual Try On](http://47.100.21.47:9999/overview.php). You need to put the dataset in "./dataset/images/".
-* Select the postive perspective images and create dataset split file 'data_pair.txt'. You need to put the dataset in "./dataset/".
+* Download the MPV dataset from [Image-based Multi-pose Virtual Try On](http://47.100.21.47:9999/overview.php) and put the dataset in "./dataset/images/".
+* Select the postive perspective images and create dataset split file 'data_pair.txt' and put the dataset in "./dataset/".
 
 ## Preprocess the dataset.
 * Pose keypoints. Use the [Openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), and put the keypoints file in "./dataset/pose_coco".
