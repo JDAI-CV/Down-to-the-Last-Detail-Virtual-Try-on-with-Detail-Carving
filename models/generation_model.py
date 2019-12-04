@@ -6,7 +6,7 @@ from models.networks import Define_G, Define_D
 from utils.transforms import create_part
 import torch.nn.functional as F
 from utils import pose_utils
-from lib.geometric_matching import GMM
+from lib.geometric_matching_multi_gpu import GMM
 from .base_model import BaseModel
 from time import time
 from utils import pose_utils

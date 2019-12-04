@@ -34,3 +34,27 @@ A demo model is given, and we provide some samples in "./dataset/images". The tr
 * Pose keypoints. Use the [Openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), and put the keypoints file in "./dataset/pose_coco".
 * Semantic parsing. Use the [CIHP_PGN](https://github.com/Engineering-Course/CIHP_PGN), and put the parsing results in "./dataset/parse_cihp".
 * Cloth mask. You can use the "GrabCut" method to get the cloth mask, and put the cloth mask in "./dataset/cloth_mask".
+
+## Download the vgg19 model
+* Download the [pretrained vgg19 checkpoint]('https://download.pytorch.org/models/vgg19-dcbb9e9d.pth').
+
+## Step 1: Train Clothing Spatial Alignment
+```
+python train.py --train_model gmm
+```
+## Step 2: Train Parsing Transformation
+```
+python train.py --train_model parsing
+```
+## Step 3: Train Detailed Appearance Generation
+```
+python train.py --train_model appearance
+```
+## Step 4: Train Face Refinement
+```
+python train.py --train_model face
+```
+## Step 5: Train jointly
+```
+python train.py --train_model appearance --joint_all --joint_parse_loss
+```
