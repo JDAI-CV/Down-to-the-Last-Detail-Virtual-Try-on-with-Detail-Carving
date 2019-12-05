@@ -30,7 +30,7 @@ sh demo.sh
 * Semantic parsing. Use the [CIHP_PGN](https://github.com/Engineering-Course/CIHP_PGN), and put the parsing results in "./dataset/parse_cihp".
 * Cloth mask. Use the "GrabCut" method for the cloth mask, and put the mask in "./dataset/cloth_mask".
 
-## Training
+## Coarse-to-fine training
 * Download the VGG19 pretrained checkpoint
 ```
 cd vgg_model/
