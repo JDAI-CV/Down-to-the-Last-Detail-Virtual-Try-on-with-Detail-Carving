@@ -1,5 +1,6 @@
-# Detailed Vitural Try-on
-Code for detailed virtual try-on under arbitrary poses. The code was developed and tested on Pytorch0.4.1. 
+# Down to the Last Detail: Virtual Try-on with Detail Carving - [Paper](https://arxiv.org/abs/1912.06324)
+
+Code for virtual try-on with high-fidelity details. The code was developed and tested with Pytorch0.4.1. 
 
 ![Virtual try-on results](./demo/forward/0.jpg)
 
