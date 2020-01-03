@@ -1,11 +1,5 @@
 # Down to the Last Detail: Virtual Try-on with Detail Carving 
-## [Paper](https://arxiv.org/abs/1912.06324)
-@inproceedings{detail2019,
-  title={Down to the Last Detail: Virtual Try-on with Detail Carving},
-  author={Wang, Jiahang and Zhang, Wei and Weizhong, Liu and Mei, Tao},
-  booktitle = {arXiv:1912.06324},
-  year={2019}
-}
+
 Code for virtual try-on with high-fidelity details. The code was developed and tested with Pytorch0.4.1. 
 
 ![Virtual try-on results](./demo/forward/0.jpg)
@@ -46,4 +40,14 @@ wget https://download.pytorch.org/models/vgg19-dcbb9e9d.pth
 * Set different configuration based on the "config.py". Then run
 ```
 sh train.sh
+```
+
+If you find this code helpful, please cite our [paper](https://arxiv.org/abs/1912.06324):
+```
+@inproceedings{detail2019,
+  title={Down to the Last Detail: Virtual Try-on with Detail Carving},
+  author={Wang, Jiahang and Zhang, Wei and Weizhong, Liu and Mei, Tao},
+  booktitle = {arXiv:1912.06324},
+  year={2019}
+}
 ```
