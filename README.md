@@ -1,4 +1,4 @@
-# Down to the Last Detail: Virtual Try-on with Detail Carving - [Paper](https://arxiv.org/abs/1912.06324)
+# Down to the Last Detail: Virtual Try-on with Detail Carving-[PDF](https://arxiv.org/abs/1912.06324)
 
 Code for virtual try-on with high-fidelity details. The code was developed and tested with Pytorch0.4.1. 
 
