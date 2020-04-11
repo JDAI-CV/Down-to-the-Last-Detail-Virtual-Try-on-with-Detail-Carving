@@ -15,7 +15,6 @@ import datetime
 import torch.backends.cudnn as cudnn
 import numpy as np
 from torchvision import utils
-from utils import data
 from PIL import Image
 from utils import pose_utils
 import torch.nn.functional as F
@@ -90,7 +89,7 @@ def forward(opt, paths, gpu_ids, refine_path):
         augment['1'] = transforms.Compose([
                                 # transforms.Resize(256),
                                 transforms.ToTensor(),
-                                transforms.Normalize((0.5), (0.5))
+                                transforms.Normalize((0.5,), (0.5,))
         ]) # change to [C, H, W]
     
     
