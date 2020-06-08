@@ -42,8 +42,8 @@ wget https://download.pytorch.org/models/vgg19-dcbb9e9d.pth
 sh train.sh
 ```
 
-## Citation
-If you find this code helpful, please cite our [paper](https://arxiv.org/abs/1912.06324):
+## Related Publications
+If you find this code helpful, please cite our paper:
 ```
 @inproceedings{detail2019,
   title={Down to the Last Detail: Virtual Try-on with Detail Carving},
