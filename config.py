@@ -108,7 +108,7 @@ class Config():
         parser.add_argument('--mask_tvloss', default=False, action='store_true')
 
         ### train | val | demo
-        parser.add_argument('warp_cloth', default=False, action='store_true')
+        parser.add_argument('--warp_cloth', default=False, action='store_true')
 
         args = parser.parse_args()
         print(args)

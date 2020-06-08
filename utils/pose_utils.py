@@ -143,13 +143,16 @@ def save_img(images, path):
         if isinstance(images[i], np.ndarray):
             if images[i].shape[3] == 1:
                 images[i] = images[i].repeat(3, axis=3)
-            if images[i].shape[3] != 3:
+            elif images[i].shape[3] != 3:
                 images[i] = images[i].transpose((0,2,3,1))
         else:
             if images[i].shape[1] == 1:
-                images[i] = images[i].repeat(1,3,1,1)
-            if images[i].shape[1] == 3:
+                images[i] = images[i].repeat(1,3,1,1).cpu().numpy()
+            elif images[i].shape[1] == 3:
                 images[i] = ((images[i].permute(0,2,3,1).contiguous().cpu().numpy() * 0.5 + 0.5) * 255).astype(np.uint8)
+            else:
+                images[i] = images[i].cpu().numpy()
+
     for i in range(len(images[0])):
         img.append(np.concatenate([image[i] for image in images], axis=1))
     

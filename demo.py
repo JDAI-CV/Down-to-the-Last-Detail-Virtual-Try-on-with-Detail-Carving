@@ -19,7 +19,7 @@ from PIL import Image
 from utils import pose_utils
 import torch.nn.functional as F
 from utils.warp_image import warped_image
-from lib.geometric_matching import GMM
+from lib.geometric_matching_multi_gpu import GMM
 from torchvision import utils
 from PIL import Image
 import time

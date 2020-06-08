@@ -366,7 +366,7 @@ class GenerationModel(BaseModel):
 
     def save_model(self, opt, epoch):
         if opt.train_mode == 'gmm':
-            model_G = osp.join(self.save_dir, 'generator', 'checkpoint_G_epoch_%d_loss_%0.5f_pth.tar'%(epoch, self.loss_G))
+            model_G = osp.join(self.save_dir, 'generator', 'checkpoint_G_epoch_%d_loss_%0.5f_pth.tar'%(epoch, self.loss))
             
             if not osp.exists(osp.join(self.save_dir, 'generator')):
                 os.makedirs(osp.join(self.save_dir, 'generator'))

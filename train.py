@@ -15,7 +15,7 @@ import sys
 from data.regular_dataset import RegularDataset
 from models.models import create_model
 from models.generation_model import GenerationModel
-from lib.geometric_matching import GMM
+from lib.geometric_matching_multi_gpu import GMM
 
 
 os.environ['CUDA_VISIBLE_DEVCIES'] = '0, 1, 2, 3'
