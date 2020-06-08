@@ -47,7 +47,7 @@ If you find this code helpful, please cite our paper:
 ```
 @inproceedings{detail2019,
   title={Down to the Last Detail: Virtual Try-on with Detail Carving},
-  author={Wang, Jiahang and Zhang, Wei and Weizhong, Liu and Mei, Tao},
+  author={Wang, Jiahang and Zhang, Wei and Liu, Weizhong and Mei, Tao},
   booktitle = {arXiv:1912.06324},
   year={2019}
 }
