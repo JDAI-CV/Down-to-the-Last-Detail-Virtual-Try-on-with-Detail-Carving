@@ -51,4 +51,19 @@ If you find this code helpful, please cite our [paper](https://arxiv.org/abs/191
   booktitle = {arXiv:1912.06324},
   year={2019}
 }
+
+@inproceedings{cvpr19,
+  title={Unsupervised Person Image Generation with Semantic Parsing Transformation},
+  author={Song, Sijie and Zhang, Wei and Liu, Jiaying and Mei, Tao},
+  booktitle = {CVPR},
+  year={2019}
+}
+
+@inproceedings{pami20,
+  title={Unpaired Person Image Generation with Semantic Parsing Transformation},
+  author={Song, Sijie and Zhang, Wei and Liu, Jiaying and Guo, Zongming and Mei, Tao},
+  booktitle = {IEEE Trans. on PAMI},
+  year={2020}
+}
+
 ```
